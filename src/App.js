@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div>
-      Vat Calculator
+      VAT Calculator
       <table>
         <thead>
           <tr>
