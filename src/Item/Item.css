@@ -1,0 +1,36 @@
+.item-main {
+  padding: 16px;
+}
+
+.item-row {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 8px;
+  align-items: center;
+}
+
+.button {
+  height: 34px;
+  width: 34px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: lightgray;
+  border-style: solid;
+}
+
+.item-input {
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: lightgray;
+  border-style: solid;
+  height: 34px;
+  padding: 0px;
+}
+
+.item-name {
+  flex: 1;
+}
+
+.item-value {
+  width: 34px;
+}

@@ -1,0 +1,11 @@
+.main {
+  width: 100vw;
+  max-width: 420px;
+  background-color: cornsilk;
+  display: flex;
+  flex-direction: column;
+}
+
+.number-input {
+  flex: 1;
+}

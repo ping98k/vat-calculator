@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
 
+import "./App.css";
+import { Item } from "./Item/Item";
 const CHARGE_LIST = [
   { text: "service charge", value: "10" },
   { text: "vat", value: "7" },
 ];
 
 function App() {
-  const [list, setList] = useState([{ text: "", value: "" }]);
+  const [list, setList] = useState([
+    { text: "", value: "1" },
+    { text: "", value: "2" },
+    { text: "", value: "3" },
+  ]);
   const [chargeList, setChargeList] = useState(CHARGE_LIST);
   const [total, setTotal] = useState(0);
 
@@ -19,99 +25,26 @@ function App() {
   }, [list, chargeList]);
 
   return (
-    <div>
+    <div className="main">
       VAT Calculator
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Value</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {list.map((item, index) => (
-            <tr key={index}>
-              <td>
-                <input
-                  value={item.text}
-                  onChange={(e) => {
-                    setList((l) => {
-                      const newList = [...l];
-                      newList[index] = { ...l[index], text: e.target.value };
-                      return newList;
-                    });
-                  }}
-                />
-              </td>
-              <td>
-                <input
-                  value={item.value}
-                  onChange={(e) => {
-                    setList((l) => {
-                      const newList = [...l];
-                      newList[index] = { ...l[index], value: e.target.value };
-                      return newList;
-                    });
-                  }}
-                />
-              </td>
-              <td>
-                <button
-                  onClick={() => setList((l) => l.filter((i) => i !== item))}
-                >
-                  -
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <br />
+      item
+      {list.map((item, index) => (
+        <Item list={list} index={index} setList={setList} item={item} />
+      ))}
       <button onClick={() => setList((l) => [...l, { text: "", value: "" }])}>
         +
       </button>
+      charge
+      {chargeList.map((item, index) => (
+        <Item
+          list={chargeList}
+          index={index}
+          setList={setChargeList}
+          item={item}
+        />
+      ))}
       <br />
-      <table>
-        <tbody>
-          {chargeList.map((item, index) => (
-            <tr key={index}>
-              <td>
-                <input
-                  value={item.text}
-                  onChange={(e) => {
-                    setChargeList((l) => {
-                      const newList = [...l];
-                      newList[index] = { ...l[index], text: e.target.value };
-                      return newList;
-                    });
-                  }}
-                />
-              </td>
-              <td>
-                <input
-                  value={item.value}
-                  onChange={(e) => {
-                    setChargeList((l) => {
-                      const newList = [...l];
-                      newList[index] = { ...l[index], value: e.target.value };
-                      return newList;
-                    });
-                  }}
-                />
-              </td>
-              <td>
-                <button
-                  onClick={() =>
-                    setChargeList((l) => l.filter((i) => i !== item))
-                  }
-                >
-                  -
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
       <button
         onClick={() => setChargeList((l) => [...l, { text: "", value: "" }])}
       >
