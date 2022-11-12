@@ -10,8 +10,9 @@ export const Item = ({ item, list, index, setList }) => {
           ...
         </button>
         <input
+          size="1"
           className="item-input item-name"
-          style={{ marginLeft: 4, marginRight: 16 }}
+          style={{ marginLeft: 4, marginRight: 4 }}
           value={text}
           onChange={(e) =>
             setList((l) => {
@@ -37,8 +38,9 @@ export const Item = ({ item, list, index, setList }) => {
           -1
         </button>
         <input
+          type={"number"}
           className="item-input item-value"
-          style={{ marginLeft: 4, marginRight: 4 }}
+          style={{ marginLeft: 4, marginRight: 4, textAlign: "right" }}
           value={value}
           onChange={(e) =>
             setList((l) => {
@@ -118,7 +120,8 @@ export const Item = ({ item, list, index, setList }) => {
 
 const styles = {
   button: {
-    height: 34,
+    height: 44,
+    minWidth: 44,
     borderRadius: 8,
     borderWidth: 1,
     borderColor: "lightgray",

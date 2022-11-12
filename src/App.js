@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
 
 import "./App.css";
-import { Item } from "./Item/Item";
+import { List } from "./List/List";
 const CHARGE_LIST = [
-  { text: "service charge", value: "10" },
-  { text: "vat", value: "7" },
+  { id: "sc", text: "service charge", value: "10" },
+  { id: "vat", text: "vat", value: "7" },
 ];
 
 function App() {
   const [list, setList] = useState([
-    { text: "", value: "1" },
-    { text: "", value: "2" },
-    { text: "", value: "3" },
+    { id: "1", text: "", value: "" },
+    { id: "2", text: "", value: "" },
   ]);
   const [chargeList, setChargeList] = useState(CHARGE_LIST);
   const [total, setTotal] = useState(0);
@@ -26,32 +25,10 @@ function App() {
 
   return (
     <div className="main">
-      VAT Calculator
-      <br />
-      item
-      {list.map((item, index) => (
-        <Item list={list} index={index} setList={setList} item={item} />
-      ))}
-      <button onClick={() => setList((l) => [...l, { text: "", value: "" }])}>
-        +
-      </button>
-      charge
-      {chargeList.map((item, index) => (
-        <Item
-          list={chargeList}
-          index={index}
-          setList={setChargeList}
-          item={item}
-        />
-      ))}
-      <br />
-      <button
-        onClick={() => setChargeList((l) => [...l, { text: "", value: "" }])}
-      >
-        +
-      </button>
-      <br />
-      Total {total}
+      <h2>VAT Calculator</h2>
+      <List list={list} setList={setList} />
+      <List title="Charge" list={chargeList} setList={setChargeList} />
+      <h2>Total {total}</h2>
     </div>
   );
 }
