@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/vat-calculator/static/css/main.974d2dc9.css",
-    "main.js": "/vat-calculator/static/js/main.3049fc05.js",
+    "main.css": "/vat-calculator/static/css/main.5af4b3e0.css",
+    "main.js": "/vat-calculator/static/js/main.d6edc47f.js",
     "static/js/787.dc29a81e.chunk.js": "/vat-calculator/static/js/787.dc29a81e.chunk.js",
     "index.html": "/vat-calculator/index.html",
-    "main.974d2dc9.css.map": "/vat-calculator/static/css/main.974d2dc9.css.map",
-    "main.3049fc05.js.map": "/vat-calculator/static/js/main.3049fc05.js.map",
+    "main.5af4b3e0.css.map": "/vat-calculator/static/css/main.5af4b3e0.css.map",
+    "main.d6edc47f.js.map": "/vat-calculator/static/js/main.d6edc47f.js.map",
     "787.dc29a81e.chunk.js.map": "/vat-calculator/static/js/787.dc29a81e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.974d2dc9.css",
-    "static/js/main.3049fc05.js"
+    "static/css/main.5af4b3e0.css",
+    "static/js/main.d6edc47f.js"
   ]
 }

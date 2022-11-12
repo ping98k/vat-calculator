@@ -47,8 +47,8 @@ function App() {
       >
         VAT Calculator: Total
         <input
-          contentEditable={false}
-          size={1}
+          pattern="[0-9]*"
+          size="1"
           style={{
             flex: 1,
             marginLeft: 16,
