@@ -1,4 +1,4 @@
-export function makeid(length = 5) {
+export function makeid(length = 3) {
   var result = "";
   var characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -7,4 +7,8 @@ export function makeid(length = 5) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
   return result;
+}
+
+export function isIOS() {
+  return navigator.userAgent.match(/ipad|iphone/i)
 }

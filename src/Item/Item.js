@@ -38,7 +38,8 @@ export const Item = ({ item, list, index, setList }) => {
           -1
         </button>
         <input
-          type={"number"}
+          type="number"
+          pattern="[0-9]*"
           className="item-input item-value"
           style={{ marginLeft: 4, marginRight: 4, textAlign: "right" }}
           value={value}
